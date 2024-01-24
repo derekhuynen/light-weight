@@ -1,14 +1,12 @@
+import { AlertColor } from '@mui/material';
 import { create } from 'zustand';
 
 type SnackbarStore = {
 	isOpen: boolean;
 	message: string;
-	severity: 'success' | 'info' | 'warning' | 'error';
+	severity: AlertColor;
 
-	open: (
-		message: string,
-		severity: 'success' | 'info' | 'warning' | 'error'
-	) => void;
+	open: (message: string, severity: AlertColor) => void;
 	close: () => void;
 };
 

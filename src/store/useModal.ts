@@ -1,8 +1,9 @@
+import React from 'react';
 import { create } from 'zustand';
 
 type ModalStore = {
 	isOpen: boolean;
-	content: string;
+	content: React.ReactNode | null;
 	title: string;
 	primaryAction?: () => void;
 	primaryActionText?: string;
@@ -32,7 +33,7 @@ const useModal = create<ModalStore>(set => ({
 	close: () =>
 		set({
 			isOpen: false,
-			content: '',
+			content: null,
 			title: '',
 			primaryAction: undefined,
 			primaryActionText: undefined,
